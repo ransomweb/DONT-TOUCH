@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koolaid - VAULT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode {
+            background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+            color: #fff;
+        }
+
+        .light-mode {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header img {
+            width: 150px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Video Section */
+        .video-box {
+            width: 100%;
+        }
+
+        .video-box iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Content Boxes */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .box {
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 300px;
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .box h2 {
+            font-size: 1.5rem;
+        }
+
+        .box p {
+            line-height: 1.6;
+        }
+
+        /* Floating Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .floating-buttons a {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #444;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-buttons a img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .floating-buttons a:hover {
+            background: #666;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sidebar for Theme Toggle */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            padding: 20px;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 2000;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .sidebar h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .sidebar button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #555;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .toggle-sidebar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #444;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .box {
+                flex: 1 1 100%;
+            }
+
+            .video-box iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>Settings</h3>
+        <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+    </div>
+
+    <!-- Toggle Sidebar Button -->
+    <button class="toggle-sidebar" onclick="toggleSidebar()">☰</button>
+
+    <!-- Header Section -->
+    <header>
+        <img src="https://h.top4top.io/p_32642xqhn0.png" alt="Koolaid Logo">
+        <h1>Koolaid - VAULT</h1>
+        <p>The ultimate vault for dominating Da Hood and its ripoff games.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/soccps9e8rs?autoplay=1&mute=1&loop=1" 
+                    title="Koolaid Vault Video" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+        </div>
+        
+        <div class="content">
+            <div class="box">
+                <h2>What Is Koolaid - VAULT?</h2>
+                <p>Koolaid - VAULT is a powerful Da Hood blatant tool that guarantees performance. Destroy opponents with just 2-3 taps using rev, even in ripoff Da Hood games.</p>
+            </div>
+            <div class="box">
+                <h2>Why Choose Us?</h2>
+                <p>
+                    - Daily giveaways<br>
+                    - Invite rewards<br>
+                    - Active server<br>
+                    - Blatant sets and vault<br>
+                    - Unmatched domination in every match
+                </p>
+            </div>
+            <div class="box">
+                <h2>Pricing</h2>
+                <p>Vault: $5 (400 Robux)<br> Set: $1 (150 Robux)</p>
+                <p>Affordable and effective. Join the thousands of players using Koolaid to dominate every match.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://youtube.com/@trophiest" target="_blank">
+            <img src="https://k.top4top.io/p_3264wbnvl1.png" alt="YouTube"> Our Channel
+        </a>
+        <a href="https://discord.gg/KuJKEKgH5N" target="_blank">
+            <img src="https://j.top4top.io/p_326421m8x0.png" alt="Discord"> Join Our Discord
+        </a>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const body = document.body;
+
+        function toggleSidebar() {
+            sidebar.classList.toggle("open");
+        }
+
+        function toggleTheme() {
+            body.classList.toggle("light-mode");
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
